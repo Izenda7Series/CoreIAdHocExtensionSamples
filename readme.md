@@ -1,4 +1,4 @@
-# IAdHocExtensionSamples
+# CoreIAdHocExtensionSamples
 
 ## Overview
 
@@ -22,7 +22,7 @@ using the v2.18.1 resources.
 
 In order to use this sample, all you will need to do is create the logic you want to test or employ within the CustomAdhocReports.cs file. Once complete,
 all you need to do is build the solution. Within the /bin/ directory should be a .dll file named CustomAdhocReports.dll. Take this file and place it alongside
-the Izenda API's other .dll resources inside of the bin. Once you restart the site, these extension methods will be employed within your environment.
+the Izenda API's other .dll resources. Once you restart the site, these extension methods will be employed within your environment.
 
 ## Reference
 
