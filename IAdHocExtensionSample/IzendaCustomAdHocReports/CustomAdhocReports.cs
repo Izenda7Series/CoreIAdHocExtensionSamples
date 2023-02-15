@@ -36,7 +36,7 @@ namespace CustomAdhocReports
         {
             var filterFieldName = "ShipCountry";
 
-            Func<ReportFilterSetting, int, QuerySource, QuerySourceField, Guid, Relationship, int> addHiddenFilters = (result, filterPosition, querySource, field, equalOperator, rel) =>
+            Func<ReportFilterSetting, int, LvvQuerySource, LvvQuerySourceField, Guid, Relationship, int> addHiddenFilters = (result, filterPosition, querySource, field, equalOperator, rel) =>
             {
                 var firstFilter = new ReportFilterField
                 {

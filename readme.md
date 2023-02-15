@@ -10,18 +10,18 @@ The provided solution will generate a .dll for you once it is built that you can
 
 ## Getting Started 
 
-Note: **You will need .net core 2.2.0 or higher to use this solution**
+Note: **Izenda v5.x.x and .NET 6**
 
 After downloading the contents of the repository, you will see one file, CustomAdhocReports.cs, within the solution once you've opened it. This file will be where
 you can build out any overrides for our IAdHocExtention methods that you would like to utilize in your environment. 
 
-The only .dll you need for this solution to work is the Izenda.BI.Framework.dll, which is already provided for you in the solution. This was constructed
-using the v2.18.1 resources.
+The library .dll you need for this solution to work are Izenda.BI.Framework.dll & System.Composition.AttributedModel.dll, which is already provided for you in the solution lib folder. This was constructed
+using the Izenda v5.0.0 resources.
 
 ## Use and Repurposing
 
 In order to use this sample, all you will need to do is create the logic you want to test or employ within the CustomAdhocReports.cs file. Once complete,
-all you need to do is build the solution. Within the /bin/ directory should be a .dll file named CustomAdhocReports.dll. Take this file and place it alongside
+all you need to do is build the solution. Within the published directory should be a .dll file named IzendaCustomAdhocReports.dll. Take this file and place it alongside
 the Izenda API's other .dll resources. Once you restart the site, these extension methods will be employed within your environment.
 
 ## Reference
