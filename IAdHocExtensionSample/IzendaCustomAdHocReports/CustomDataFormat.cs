@@ -24,44 +24,85 @@ namespace CustomAdhocReports
                     Name = "By Hour",
                     DataType = DataType.DateTime,
                     Category = IzendaKey.CustomFormat,
+                    GroupBy = "dateandtime",
                     FormatFunc = (x) =>
                     {
                         var date = Convert.ToDateTime(x);
                         return date.ToString("M/d/yyyy h:00 tt");
-                    }
+                    },
+                    JsFormatString = "By Hour"
                 },
                 new DataFormat
                 {
                     Name = "dd MM:mm",
                     DataType = DataType.DateTime,
                     Category = IzendaKey.CustomFormat,
+                    GroupBy = "dateandtime",
                     FormatFunc = (x) =>
                     {
                         var date = Convert.ToDateTime(x);
                         return date.ToString("dd HH:mm");
-                    }
+                    },
+                    JsFormatString = "{value:%d %H:%M}"
                 },
                 new DataFormat
                 {
                     Name = "dd HH:mm:ss",
                     DataType = DataType.DateTime,
                     Category = IzendaKey.CustomFormat,
+                    GroupBy = "dateandtime",
                     FormatFunc = (x) =>
                     {
                         var date = Convert.ToDateTime(x);
                         return date.ToString("dd HH:mm:ss");
-                    }
+                    },
+                    JsFormatString = "{value:%d %H:%M:%S}"
                 },
                 new DataFormat
                 {
                     Name = "dd mm:ss",
                     DataType = DataType.DateTime,
                     Category = IzendaKey.CustomFormat,
+                    GroupBy = "dateandtime",
                     FormatFunc = (x) =>
                     {
                         var date = Convert.ToDateTime(x);
                         return date.ToString("dd mm:ss");
-                    }
+                    },
+                    JsFormatString = "{value:%d %M:%S}"
+                },
+                new DataFormat
+                {
+                    Name = "week",
+                    DataType = DataType.DateTime,
+                    Category = IzendaKey.CustomFormat,
+                    GroupBy = "weeknumber",
+                    FormatFunc = x =>
+                    {
+                        try
+                        {
+                            if (x is string xString)
+                            {
+                                var parts = xString.Split("-");
+                                var year = int.Parse(parts[0]);
+                                int week = int.Parse(parts[1]);
+
+                                var firstDate = new DateTime(year, 1, 1);
+                                var dateTime = firstDate.AddDays((week - 1) * 7 - (int)firstDate.DayOfWeek + (int)DayOfWeek.Monday);
+
+                                // Example: "Week from Monday, January 01, 2020"
+                                return "Week from " + dateTime.ToString("dddd, MMMM d, yyyy");
+                            }
+
+                            return "Week from " + Convert.ToDateTime(x).ToString("dddd, MMMM d, yyyy");
+                        }
+                        catch
+                        {
+                            return x?.ToString();
+                        }
+                    },
+                    JsFormatString ="Week from {value:%A, %B %e, %Y}",
+                    FormatDataType = DataType.DateTime
                 },
                 new DataFormat
                 {
