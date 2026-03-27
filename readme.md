@@ -10,7 +10,7 @@ The provided solution will generate a .dll for you once it is built that you can
 
 ## Getting Started 
 
-Note: **Izenda v5.x.x and .NET 6**
+Note: **Izenda v5.x.x and .NET 10**
 
 After downloading the contents of the repository, you will see one file, CustomAdhocReports.cs, within the solution once you've opened it. This file will be where
 you can build out any overrides for our IAdHocExtention methods that you would like to utilize in your environment. 
