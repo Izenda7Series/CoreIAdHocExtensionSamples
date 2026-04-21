@@ -1,0 +1,9 @@
+name: Validate JIRA ID
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+jobs:
+  validate:
+    uses: isw-Izenda/.github/.github/workflows/validate-pr-title-reusable.yml@main
